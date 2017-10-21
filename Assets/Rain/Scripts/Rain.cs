@@ -11,6 +11,7 @@ public class Rain : PostProcessEffectSettings
 	[Range(0f, 1f)] public FloatParameter strength = new FloatParameter { value = 0f };
 	[Range(0f, 1f)] public FloatParameter amount = new FloatParameter { value = 0.5f };
 	[Range(0f, 1f)] public FloatParameter size = new FloatParameter { value = 0.5f };
+	[Range(-1f, 1f)] public FloatParameter direction = new FloatParameter { value = 0f };
 }
 
 // Renderer class

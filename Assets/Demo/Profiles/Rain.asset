@@ -40,6 +40,9 @@ MonoBehaviour:
   size:
     overrideState: 1
     value: 0.4
+  direction:
+    overrideState: 1
+    value: 0.2
 --- !u!114 &114289015140821520
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,6 +70,9 @@ MonoBehaviour:
   size:
     overrideState: 0
     value: 0.5
+  direction:
+    overrideState: 0
+    value: 0
 --- !u!114 &114804120739404740
 MonoBehaviour:
   m_ObjectHideFlags: 3
