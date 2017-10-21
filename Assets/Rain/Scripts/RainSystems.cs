@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RainSystems : MonoBehaviour 
 {
-	public ParticleSystems m_Systems;
+	/*public ParticleSystems m_Systems;
 	public Defaults m_Defaults;
 	
 	[Serializable]
@@ -63,5 +63,5 @@ public class RainSystems : MonoBehaviour
 		
 	}
 
-	public enum RotationAxis {X, Y, Z}
+	public enum RotationAxis {X, Y, Z}*/
 }

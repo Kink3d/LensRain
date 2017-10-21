@@ -12,7 +12,28 @@ MonoBehaviour:
   m_Name: Rain
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 114408394570314650}
+  - {fileID: 114274197641706926}
+--- !u!114 &114274197641706926
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcd3be4f0acb462f8f0df4c0ebacca9, type: 3}
+  m_Name: Rain
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  debug:
+    overrideState: 0
+    value: 0
+  strength:
+    overrideState: 0
+    value: 1
 --- !u!114 &114289015140821520
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -28,57 +49,12 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 1
-  debugMode:
+  debug:
     overrideState: 0
     value: 0
-  dripRefraction:
-    overrideState: 0
-    value: 0.5
-  dripCount:
+  strength:
     overrideState: 0
     value: 1
-  dripSize:
-    overrideState: 0
-    value: 0.5
-  dripSpeed:
-    overrideState: 0
-    value: 0.5
-  direction:
-    overrideState: 0
-    value: 0
---- !u!114 &114408394570314650
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcd3be4f0acb462f8f0df4c0ebacca9, type: 3}
-  m_Name: Rain
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  debugMode:
-    overrideState: 1
-    value: 0
-  dripRefraction:
-    overrideState: 1
-    value: 0.506
-  dripCount:
-    overrideState: 1
-    value: 1
-  dripSize:
-    overrideState: 1
-    value: 0.8
-  dripSpeed:
-    overrideState: 1
-    value: 0.3
-  direction:
-    overrideState: 1
-    value: 0.3
 --- !u!114 &114804120739404740
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -97,15 +73,3 @@ MonoBehaviour:
   dripRefraction:
     overrideState: 1
     value: 0.5
-  dripCount:
-    overrideState: 0
-    value: 1
-  dripSize:
-    overrideState: 1
-    value: 0.7
-  dripSpeed:
-    overrideState: 1
-    value: 0.5
-  direction:
-    overrideState: 1
-    value: 0.08

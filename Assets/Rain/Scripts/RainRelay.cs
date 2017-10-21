@@ -5,77 +5,61 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RainRelay : MonoBehaviour 
 {
-	private GameObject prefab;
-	[SerializeField][HideInInspector]
-	private GameObject m_Instance;
-	[SerializeField][HideInInspector]
-	private RenderTexture m_Rt;
-	[SerializeField][HideInInspector]	
-	private RainSystems m_RainSystems;
-
-	private static RainRelay Instance;
-	public static RainRelay _Instance
+	private static RainRelay m_Instance;
+	public static RainRelay Instance
 	{
 		get 
 		{
-			if(Instance == null) 
-				Instance = GameObject.FindObjectOfType<RainRelay>();
-			return Instance; 
+			if(m_Instance == null) 
+				m_Instance = GameObject.FindObjectOfType<RainRelay>();
+			return m_Instance; 
 		}
 	}
 
-	public RenderTexture TrySetup()
+	[HideInInspector] public RenderTexture m_RainTexture;
+	RainSystems m_RainSystems;
+
+	// Called when component is added
+	void Reset()
 	{
-		if(RequiresInit())
-		{
-			Cleanup();
-			Init();
-		}	
-		return m_Rt;
+		m_RainTexture = GetRainTexture(); // Get rain texture
+		m_RainSystems = GetRainSystems(); // Get rain system
+		m_RainSystems.GetComponent<Camera>().targetTexture = m_RainTexture; // Set camera target
 	}
 
-	bool RequiresInit()
+	// Get rain texture
+	RenderTexture GetRainTexture()
 	{
-		if(!m_Rt || !m_Instance)
-			return true;
-		else 
-			return false;
-	}
-
-	void Cleanup()
-	{
-		if(prefab)
-			prefab = null;
-		if(m_Rt)
+		if(m_RainTexture) // If texture exists
+			return m_RainTexture; // Return
+		else // If texture doesnt exist
 		{
-			Camera c = GetComponent<Camera>();
-			c.targetTexture = null;
-			DestroyImmediate(m_Rt);
+			var tex = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.ARGB32); // Create new RT
+			tex.name = "RainTexture"; // Set name
+			return tex; // Return
 		}
-		if(m_Instance)
-			Destroy(m_Instance);
 	}
 
+	// Get rain systems
+	RainSystems GetRainSystems()
+	{
+		Transform systemTransform = transform.Find("RainSystems"); // Find current systems
+		if(systemTransform) // If systems exist
+			return systemTransform.GetComponent<RainSystems>(); // Return
+		else // If systems dont exist
+		{
+			var prefab = (GameObject)Resources.Load("RainSystems"); // Load prefab
+			var instance = Instantiate(prefab, transform.position, transform.rotation, transform); // Instantiate
+			instance.name = "RainSystems"; // Set name
+			return instance.GetComponent<RainSystems>(); // Return
+		}
+	}
+
+	// Called from Rain.cs when effect is disabled
 	public void Destroy()
 	{
-		Cleanup();
-		DestroyImmediate(this);
-	}
-
-	public void RelayParameters(Rain input)
-	{
-		m_RainSystems.SetRainParameters(input);
-	}
-
-	// Use this for initialization
-	public void Init () 
-	{
-		m_Rt = new RenderTexture(Screen.width, Screen.height, 16, RenderTextureFormat.ARGB32);
-		prefab = (GameObject)Resources.Load("RainSystems");
-		Camera c = GetComponent<Camera>();
-		m_Instance = Instantiate(prefab, c.transform.position, c.transform.rotation, c.transform);
-		m_Instance.name = "RainSystems";
-		m_Instance.GetComponent<Camera>().targetTexture = m_Rt;
-		m_RainSystems = m_Instance.GetComponent<RainSystems>();
+		if(m_RainSystems) // If rain systems are active
+			DestroyImmediate(m_RainSystems.gameObject); // Destroy them
+		DestroyImmediate(this); // Destroy the relay // TODO - Error on stop play mode
 	}
 }
