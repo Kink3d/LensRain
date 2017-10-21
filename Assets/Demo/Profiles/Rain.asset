@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Rain
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 114274197641706926}
---- !u!114 &114274197641706926
+  - {fileID: 114280794288367710}
+--- !u!114 &114280794288367710
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -29,11 +29,17 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   debug:
-    overrideState: 0
+    overrideState: 1
     value: 0
   strength:
-    overrideState: 0
+    overrideState: 1
     value: 1
+  amount:
+    overrideState: 1
+    value: 1
+  size:
+    overrideState: 1
+    value: 0.4
 --- !u!114 &114289015140821520
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -55,6 +61,12 @@ MonoBehaviour:
   strength:
     overrideState: 0
     value: 1
+  amount:
+    overrideState: 0
+    value: 0.5
+  size:
+    overrideState: 0
+    value: 0.5
 --- !u!114 &114804120739404740
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -70,6 +82,15 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 1
-  dripRefraction:
-    overrideState: 1
+  debug:
+    overrideState: 0
+    value: 0
+  strength:
+    overrideState: 0
+    value: 0
+  amount:
+    overrideState: 0
+    value: 0.5
+  size:
+    overrideState: 0
     value: 0.5

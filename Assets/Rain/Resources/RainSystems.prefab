@@ -314,6 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0505f85e644d1448594916217714ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Systems:
+  - {fileID: 198445681083152122}
+  - {fileID: 198866266917452080}
+  - {fileID: 198090876585644594}
 --- !u!124 &124285313320472594
 Behaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +384,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -393486813
+  randomSeed: 1480484694
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6091,7 +6095,7 @@ ParticleSystem:
     subEmitters:
     - emitter: {fileID: 198235131881388434}
       type: 0
-      properties: 4
+      properties: -1
   LightsModule:
     enabled: 0
     ratio: 0
@@ -7072,8 +7076,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.4
+      minMaxState: 0
+      scalar: 1
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -7113,7 +7117,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -7154,7 +7158,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -15894,7 +15898,7 @@ ParticleSystem:
     subEmitters:
     - emitter: {fileID: 198987589343231800}
       type: 0
-      properties: 4
+      properties: -1
   LightsModule:
     enabled: 0
     ratio: 0
@@ -16724,7 +16728,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 63323124
+  randomSeed: -1038573535
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20137,9 +20141,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20178,7 +20182,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -20219,7 +20223,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:

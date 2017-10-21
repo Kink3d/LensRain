@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RainRelay : MonoBehaviour 
 {
+	//Singleton
 	private static RainRelay m_Instance;
 	public static RainRelay Instance
 	{
@@ -16,8 +17,8 @@ public class RainRelay : MonoBehaviour
 		}
 	}
 
-	[HideInInspector] public RenderTexture m_RainTexture;
-	RainSystems m_RainSystems;
+	[HideInInspector] public RenderTexture m_RainTexture; // Target texture for rain camera
+	[HideInInspector] public RainSystems m_RainSystems; // Reference to systems
 
 	// Called when component is added
 	void Reset()
@@ -61,5 +62,12 @@ public class RainRelay : MonoBehaviour
 		if(m_RainSystems) // If rain systems are active
 			DestroyImmediate(m_RainSystems.gameObject); // Destroy them
 		DestroyImmediate(this); // Destroy the relay // TODO - Error on stop play mode
+	}
+
+	// Relay parameters from Rain.cs to RainSystems
+	public void RelayParameters(Rain input)
+	{
+		if(m_RainSystems) // If rain systems are active
+			m_RainSystems.SetParameters(input); // Relay
 	}
 }
