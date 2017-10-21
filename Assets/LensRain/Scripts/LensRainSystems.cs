@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RainSystems : MonoBehaviour 
+public class LensRainSystems : MonoBehaviour 
 {
 	public ParticleSystem[] m_Systems; // Particle system array
 
 	// Set parameters from the effect on the particle systems
-	public void SetParameters(Rain input)
+	public void SetParameters(LensRain input)
 	{
 		for(int i = 0; i < m_Systems.Length; i++) // Iterate particle systems
 		{

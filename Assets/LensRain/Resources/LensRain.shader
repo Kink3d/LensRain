@@ -1,4 +1,4 @@
-﻿Shader "Hidden/PostProcessing/Extensions/Rain"
+﻿Shader "Hidden/PostProcessing/Extensions/LensRain"
 {
     HLSLINCLUDE
         
