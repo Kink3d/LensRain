@@ -13,6 +13,17 @@ public class RainRelay : MonoBehaviour
 	[SerializeField][HideInInspector]	
 	private RainSystems m_RainSystems;
 
+	private static RainRelay Instance;
+	public static RainRelay _Instance
+	{
+		get 
+		{
+			if(Instance == null) 
+				Instance = GameObject.FindObjectOfType<RainRelay>();
+			return Instance; 
+		}
+	}
+
 	public RenderTexture TrySetup()
 	{
 		if(RequiresInit())
@@ -36,9 +47,19 @@ public class RainRelay : MonoBehaviour
 		if(prefab)
 			prefab = null;
 		if(m_Rt)
+		{
+			Camera c = GetComponent<Camera>();
+			c.targetTexture = null;
 			DestroyImmediate(m_Rt);
+		}
 		if(m_Instance)
 			Destroy(m_Instance);
+	}
+
+	public void Destroy()
+	{
+		Cleanup();
+		DestroyImmediate(this);
 	}
 
 	public void RelayParameters(Rain input)
