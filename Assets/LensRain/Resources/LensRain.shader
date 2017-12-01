@@ -24,8 +24,8 @@ if(_Debug == 1) // If debug is enabled
 
             float3 normal; // Declare normals vector
             normal.x		= s - n; // Get X
-            normal.z		= w - e; // Get Y
-            normal.y		= 0.05; // Get Z
+            normal.y		= w - e; // Get Y
+            normal.z		= 0.05; // Get Z
             
             // Generate new UVs with distortion
             float2 uv		= float2(normal.x * _ScreenParams.z * _Strength + i.texcoord.x,
